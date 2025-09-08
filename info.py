@@ -77,7 +77,7 @@ FILES_DATABASE_URL = environ.get('FILES_DATABASE_URL', "")
 if len(FILES_DATABASE_URL) == 0:
     logger.error('FILES_DATABASE_URL is missing, exiting now')
     exit()
-SECOND_FILES_DATABASE_URL = environ.get('SECOND_FILES_DATABASE_URL', "mongodb+srv://raayi:raayi87@@raani.pqqj1.mongodb.net/?retryWrites=true&w=majority&appName=raani")
+SECOND_FILES_DATABASE_URL = environ.get('SECOND_FILES_DATABASE_URL', "mongodb+srv://vigking:vigking1098.@vig.tuah1.mongodb.net/?retryWrites=true&w=majority&appName=vig")
 if len(SECOND_FILES_DATABASE_URL) == 0:
     logger.info('SECOND_FILES_DATABASE_URL is empty')
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
@@ -148,10 +148,10 @@ STICKERS = [sticker for sticker in environ.get('STICKERS', 'CAACAgIAAxkBAAEN4ctn
 # for Premium 
 IS_PREMIUM = is_enabled('IS_PREMIUM', False)
 PRE_DAY_AMOUNT = int(environ.get('PRE_DAY_AMOUNT', '10')) # add amount in INR for premium charge pre day 
-UPI_ID = environ.get("UPI_ID", "")
+UPI_ID = environ.get("UPI_ID", "benn007")
 if len(UPI_ID) == 0:
     logger.info('UPI_ID is empty')
-UPI_NAME = environ.get("UPI_NAME", "") # add your UPI account name
+UPI_NAME = environ.get("UPI_NAME", "benny") # add your UPI account name
 if len(UPI_NAME) == 0:
     logger.info('UPI_NAME is empty')
 RECEIPT_SEND_USERNAME = environ.get("RECEIPT_SEND_USERNAME", "@Hansaka_Anuhas")
