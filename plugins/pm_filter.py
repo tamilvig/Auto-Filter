@@ -26,9 +26,7 @@ async def pm_search(client, message):
  stg = await get_settings() or {}
 
 if not stg.get('PM_SEARCH'):
-    return
-
-        return await message.reply_text('PM search was disabled!')
+    return await message.reply_text('PM search was disabled!')
     if await is_premium(message.from_user.id, client):
         if not stg.get('AUTO_FILTER'):
             return await message.reply_text('Auto filter was disabled!')
