@@ -23,8 +23,11 @@ CAP = {}
 async def pm_search(client, message):
     if message.text.startswith("/"):
         return
-    stg = db.get_bot_sttgs()
-    if not stg.get('PM_SEARCH'):
+ stg = await get_settings() or {}
+
+if not stg.get('PM_SEARCH'):
+    return
+
         return await message.reply_text('PM search was disabled!')
     if await is_premium(message.from_user.id, client):
         if not stg.get('AUTO_FILTER'):
