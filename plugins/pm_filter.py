@@ -21,12 +21,11 @@ CAP = {}
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_search(client, message):
-    if message.text.startswith("/"):
-        return
- stg = await get_settings() or {}
+async def pm_search(client, message):
+    stg = await get_settings() or {}  # Ensure stg is always a dict
 
-if not stg.get('PM_SEARCH'):
-    return await message.reply_text('PM search was disabled!')
+    if not stg.get('PM_SEARCH'):
+        return await message.reply_text('PM search was disabled!')
     if await is_premium(message.from_user.id, client):
         if not stg.get('AUTO_FILTER'):
             return await message.reply_text('Auto filter was disabled!')
