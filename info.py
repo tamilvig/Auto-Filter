@@ -91,7 +91,7 @@ TUTORIAL = environ.get("TUTORIAL", "https://t.me/HA_Bots")
 VERIFY_TUTORIAL = environ.get("VERIFY_TUTORIAL", "https://t.me/HA_Bots")
 
 # Bot settings
-TIME_ZONE = environ.get('TIME_ZONE', 'Kolkata') # Replace your time zone
+TIME_ZONE = environ.get('TIME_ZONE', 'Asia/Colombo') # Replace your time zone
 DELETE_TIME = int(environ.get('DELETE_TIME', 3600)) # Add time in seconds
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 MAX_BTN = int(environ.get('MAX_BTN', 8))
