@@ -1,4 +1,3 @@
-
 import asyncio
 import re
 from time import time as time_now
@@ -21,13 +20,11 @@ CAP = {}
 
 @Client.on_message(filters.private & filters.text & filters.incoming)
 async def pm_search(client, message):
-async def pm_search(client, message):
- def get_settings():
-    # ... logic to fetch settings ...
-    if settings_found:
-        return settings
-    else:
-        return {} # Return an empty dictionary instead of Noneawait message.reply_text('PM search was disabled!')
+    if message.text.startswith("/"):
+        return
+    stg = db.get_bot_sttgs()
+    if not stg.get('PM_SEARCH'):
+        return await message.reply_text('PM search was disabled!')
     if await is_premium(message.from_user.id, client):
         if not stg.get('AUTO_FILTER'):
             return await message.reply_text('Auto filter was disabled!')
